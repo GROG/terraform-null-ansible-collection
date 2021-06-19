@@ -1,0 +1,24 @@
+###############################################################################
+
+output "collections_paths" {
+  value = local.collections_paths
+
+  description = <<EOF
+Ansible collections paths
+
+Paths where the collection and it's dependencies are installed.
+EOF
+}
+
+output "id" {
+  value = null_resource.collection.id
+
+  description = <<EOF
+Resource ID
+
+This can be used to trigger updates for other resources.
+EOF
+
+}
+
+###############################################################################
