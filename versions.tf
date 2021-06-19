@@ -6,8 +6,8 @@ terraform {
     null = {
       source = "hashicorp/null"
     }
-    local_file = {
-      source = "hashicorp/local_file"
+    local = {
+      source = "hashicorp/local"
     }
   }
 }

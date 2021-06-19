@@ -1,10 +1,10 @@
 ###############################################################################
 
-variable "source" {
+variable "name" {
   type = string
 
   description = <<EOF
-Source of the collection to install
+Name/Source of the collection to install
 EOF
 }
 
