@@ -5,17 +5,17 @@ locals {
   collection_sha1 = sha1(var.name)
 
   # Use customized collections path to avoid conflicting version issues
-  collections_paths = "${abspath(path.root)}/.ansible/collections/${local.collection_sha1}"
+  collections_path = "${abspath(path.root)}/.ansible/collections/${local.collection_sha1}"
 
   # Installation commmand
-  install_command = "ansible-galaxy collection install -p ${local.collections_paths} ${var.name}"
+  install_command = "ansible-galaxy collection install -p ${local.collections_path} ${var.name}"
 }
 
 ###############################################################################
 
 # Will detect if the module dir has been deleted between runs
 resource "local_file" "install_trigger" {
-  filename = "${local.collections_paths}/.install_trigger"
+  filename = "${local.collections_path}/.install_trigger"
   content  = local.install_command
 }
 

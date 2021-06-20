@@ -1,12 +1,12 @@
 ###############################################################################
 
-output "collections_paths" {
-  value = local.collections_paths
+output "collections_path" {
+  value = local.collections_path
 
   description = <<EOF
-Ansible collections paths
+Ansible collections path
 
-Paths where the collection and it's dependencies are installed.
+Path where the collection and it's dependencies are installed.
 EOF
 }
 

@@ -36,7 +36,7 @@ module "my_collection" {
 # Some other resource using the collections path
 resource "null_resource" "run_ansible" {
   provisioner "local-exec" {
-    command = "ANSIBLE_COLLECTIONS_PATHS=${module.my_collection.collections_paths} ansible-playbook my_collection.playbook"
+    command = "ANSIBLE_COLLECTIONS_PATHS=${module.my_collection.collections_path} ansible-playbook my_collection.playbook"
   }
 }
 
